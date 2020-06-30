@@ -111,6 +111,7 @@ class NotesViewController: UIViewController {
             print("Unable to Perform Fetch Request")
             print("\(error), \(error.localizedDescription)")
         }
+        //Faulting test code
 //        coreDataManager.mainManagedObjectContext.perform {
 //            do {
 //                let fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
