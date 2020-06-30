@@ -104,31 +104,31 @@ class NotesViewController: UIViewController {
     
     //MARK: - Fetch Notes
     private func fetchNotes() {
-//        do {
-//            try fetchedResultsController.performFetch()
-//        }
-//        catch {
-//            print("Unable to Perform Fetch Request")
-//            print("\(error), \(error.localizedDescription)")
-//        }
-        coreDataManager.mainManagedObjectContext.perform {
-            do {
-                let fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
-                let notes = try fetchRequest.execute()
-                if let note = notes.first {
-                    print(note.title ?? "***")
-                    if let tags = note.tags as? Set<Tag> {
-                        print(tags)
-                        for tag in tags {
-                            print(tag.name ?? "")
-                        }
-                    }
-                }
-            }
-            catch {
-                print("Error: \(error)")
-            }
+        do {
+            try fetchedResultsController.performFetch()
         }
+        catch {
+            print("Unable to Perform Fetch Request")
+            print("\(error), \(error.localizedDescription)")
+        }
+//        coreDataManager.mainManagedObjectContext.perform {
+//            do {
+//                let fetchRequest: NSFetchRequest<Note> = Note.fetchRequest()
+//                let notes = try fetchRequest.execute()
+//                if let note = notes.first {
+//                    print(note.title ?? "***")
+//                    if let tags = note.tags as? Set<Tag> {
+//                        print(tags)
+//                        for tag in tags {
+//                            print(tag.name ?? "")
+//                        }
+//                    }
+//                }
+//            }
+//            catch {
+//                print("Error: \(error)")
+//            }
+//        }
     }
     
     //MARK: - Update View
